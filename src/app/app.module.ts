@@ -1,9 +1,10 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 // Mapas
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AgmCoreModule } from '@agm/core';
 
 
 import { GuardadosPage, HomePage, MapaPage, TabsPage } from "../pages/index.paginas";
@@ -30,8 +31,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     IonicModule.forRoot(MyApp),
+    BrowserModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD4YFaT5DvwhhhqMpDP2pBInoG8BTzA9JY'
+      apiKey: 'AIzaSyBEqKtJCsyLJBQibxDIdqqwd_KijpnchNc'
     })
   ],
   bootstrap: [IonicApp],

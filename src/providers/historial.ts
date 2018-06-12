@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ScanData } from "../models/scan-data.model";
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { Contacts } from '@ionic-native/contacts';
+import { Contacts, Contact, ContactField, ContactName   } from '@ionic-native/contacts';
 
 
 
@@ -13,6 +13,8 @@ import { MapaPage } from "../pages/mapa/mapa";
 
 
 @Injectable()
+
+
 export class HistorialService {
 
   private _historial:ScanData[] = [];
@@ -29,11 +31,13 @@ export class HistorialService {
 
     let data = new ScanData( texto );
 
+
+
     this._historial.unshift( data );
 
-    console.log( this._historial );
+    console.table( this._historial );
 
-    this.abrir_scan(0);
+    //this.abrir_scan(0);
 
 
   }
@@ -49,7 +53,7 @@ export class HistorialService {
       case "http":
         this.iab.create( scanData.info, "_system" );
 
-      break
+      break;
 
       /*case "mapa":
 
