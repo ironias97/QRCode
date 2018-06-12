@@ -22,12 +22,14 @@ export class HomePage {
                private _historialService:HistorialService) {}
 
 
+  
   scan(){
     console.log("Realizando scan...");
 
-    if( !this.platform.is('cordova') ){
-      // this._historialService.agregar_historial( "http://google.com");
-      // this._historialService.agregar_historial( "geo:9.976133040865312,-84.00677479055173" );
+    if( !this.platform.is('cordova')){
+    
+    // this._historialService.agregar_historial( "http://google.com");
+    // this._historialService.agregar_historial( "geo:9.976133040865312,-84.00677479055173" );
       
 //       this._historialService.agregar_historial( `BEGIN:VCARD
 // VERSION:2.1
@@ -39,46 +41,17 @@ export class HomePage {
 // ADR;TYPE=work:;;;
 // EMAIL:clark@superman.com
 // END:VCARD` );
+}
 
-      return;
-    }
+this.barcodeScanner.scan().then(barcodeData => {
+      console.log('Barcode data', barcodeData);
+     }).catch(err => {
+         console.log('Error', err);
+         this.mostrar_error('Error: '+err);
+     });
+}
 
-    try {
-      
-      //throw new Error('Something bad happened');
-
-      this.barcodeScanner.scan().then( (barcodeData) => {
-        // Success! Barcode data is here
-        console.log("result:", barcodeData.text );
-        console.log("format:", barcodeData.format );
-        console.log("cancelled:", barcodeData.cancelled );
-   
-        
-   
-        if( barcodeData.text != null ){//if( barcodeData.cancelled == 0 && barcodeData.text != null ){
-          this._historialService.agregar_historial( barcodeData.text  );
-        }
-   
-   
-       }, (err) => {
-           // An error occurred
-           console.error("Error: ", err );
-           this.mostrar_error( "Error: " + err );
-       });
-    }
-    catch(e) {
-      
-      console.log(e);
-      throw new Error('Something bad happened');
-    }
-
-
-   
-
-  }
-
-
-  mostrar_error( mensaje:string ){
+mostrar_error( mensaje:string ){
 
     let toast = this.toastCtrl.create({
       message: mensaje,
