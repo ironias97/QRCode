@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ScanData } from "../models/scan-data.model";
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
+import { Contacts } from '@ionic-native/contacts';
 
 
 
@@ -51,38 +51,18 @@ export class HistorialService {
 
       break
 
-      case "mapa":
+      /*case "mapa":
 
         this.modalCtrl.create( MapaPage, { coords: scanData.info })
             .present();
 
-      break;
+      break;*/
 
-      case "contacto":
+      /*case "contacto":
 
           this.crear_contacto(  scanData.info );
 
-      break;
-
-      case "email":
-
-        // "MATMSG:TO:fernando.herrera85@gmail.com;SUB:Hola Mundo;BODY:Saludos Fernando;;"
-        let htmlLink = scanData.info;
-        // let htmlLink = "mailto:name1@rapidtables.com?subject=hola%20mundo&body=The%20body%20of%20the%20email";
-
-        htmlLink = htmlLink.replace("MATMSG:TO:","mailto:");
-        htmlLink = htmlLink.replace(";SUB:", "?subject=");
-        htmlLink = htmlLink.replace(";BODY:", "&body=");
-        htmlLink = htmlLink.replace(";;", "");
-        htmlLink = htmlLink.replace(/ /g, "%20");
-
-        console.log(htmlLink);
-
-        this.iab.create( htmlLink, "_system" );
-
-
-
-      break;
+      break;*/
 
       default:
         console.error("Tipo no soportado");
@@ -92,7 +72,7 @@ export class HistorialService {
 
   }
 
-  private crear_contacto( texto:string ){
+  /*private crear_contacto( texto:string ){
 
     let campos:any = this.parse_vcard( texto );
     console.log( campos );
@@ -117,19 +97,19 @@ export class HistorialService {
     );
 
 
-  }
+  }*/
 
-  private crear_toast( mensaje:string ){
+  /*private crear_toast( mensaje:string ){
 
     this.toastCtrl.create({
       message: mensaje,
       duration: 2500
     }).present();
 
-  }
+  }*/
 
 
-  private parse_vcard( input:string ) {
+  /*private parse_vcard( input:string ) {
 
     var Re1 = /^(version|fn|title|org):(.+)$/i;
     var Re2 = /^([^:;]+);([^:]+):(.+)$/;
@@ -171,7 +151,7 @@ export class HistorialService {
     });
 
     return fields;
-};
+};*/
 
 
 

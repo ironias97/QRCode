@@ -18,20 +18,20 @@ export class MapaPage {
     // this.lat = 9.97606279727691;
     // this.lng = -84.0067932788208;
 
-    let coordsArray = this.navParams.get("coords").split(",");
+    /*let coordsArray = this.navParams.get("coords").split(",");
 
     this.lat = Number( coordsArray[0].replace("geo:","") );
     this.lng = Number( coordsArray[1] );
 
 
-    console.log(  this.lat, this.lng );
+    console.log(  this.lat, this.lng );*/
 
   }
 
 
-  cerrar_modal(){
+  /*cerrar_modal(){
     this.viewCtrl.dismiss();
-  }
+  }*/
 
 
 }
