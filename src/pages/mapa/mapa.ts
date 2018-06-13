@@ -15,23 +15,23 @@ export class MapaPage {
   constructor( public navParams: NavParams,
                private viewCtrl: ViewController ) {
 
-     this.lat = 24.5592665;
-     this.lng = -104.6587821;
+     //this.lat = 24.022657;
+     //this.lng = -104.553776;
 
-    /*let coordsArray = this.navParams.get("coords").split(",");
+    let coordsArray = this.navParams.get("coords").split(",");
 
     this.lat = Number( coordsArray[0].replace("geo:","") );
     this.lng = Number( coordsArray[1] );
 
 
-    console.log(  this.lat, this.lng );*/
+    console.log(  this.lat, this.lng );
 
   }
 
 
-  /*cerrar_modal(){
+  cerrar_modal(){
     this.viewCtrl.dismiss();
-  }*/
+  }
 
 
 }

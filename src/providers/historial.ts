@@ -55,18 +55,18 @@ export class HistorialService {
 
       break;
 
-      /*case "mapa":
+      case "mapa":
 
         this.modalCtrl.create( MapaPage, { coords: scanData.info })
             .present();
 
-      break;*/
+      break;
 
-      /*case "contacto":
+      case "contacto":
 
           this.crear_contacto(  scanData.info );
 
-      break;*/
+      break;
 
       default:
         console.error("Tipo no soportado");
@@ -76,7 +76,7 @@ export class HistorialService {
 
   }
 
-  /*private crear_contacto( texto:string ){
+  private crear_contacto( texto:string ){
 
     let campos:any = this.parse_vcard( texto );
     console.log( campos );
@@ -101,19 +101,19 @@ export class HistorialService {
     );
 
 
-  }*/
+  }
 
-  /*private crear_toast( mensaje:string ){
+  private crear_toast( mensaje:string ){
 
     this.toastCtrl.create({
       message: mensaje,
       duration: 2500
     }).present();
 
-  }*/
+  }
 
 
-  /*private parse_vcard( input:string ) {
+  private parse_vcard( input:string ) {
 
     var Re1 = /^(version|fn|title|org):(.+)$/i;
     var Re2 = /^([^:;]+);([^:]+):(.+)$/;
@@ -155,7 +155,7 @@ export class HistorialService {
     });
 
     return fields;
-};*/
+};
 
 
 
