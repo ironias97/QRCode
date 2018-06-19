@@ -68,6 +68,9 @@ export class HistorialService {
 
       break;
 
+      case "email":
+        this.mandar_email(scanData.info);
+
       default:
         console.error("Tipo no soportado");
 
@@ -76,6 +79,38 @@ export class HistorialService {
 
   }
 
+  private mandar_email(texto:string){
+    var contenido=[];
+    contenido= texto.split (';');
+
+    var start_index = 0
+    var number_of_elements_to_remove = 3;
+    var noMATMSG_TO;
+    var noTO;
+    var noSUB;
+    var noBODY;
+
+    contenido.forEach(element => {
+
+      if (element.includes('MATMSG:')){
+        noMATMSG_TO= element.replace('MATMSG:', '');
+        noMATMSG_TO= noMATMSG_TO.replace('TO:', '');
+      }
+
+      if (element.includes("SUB:")){
+        noSUB=element.replace('SUB:', '');
+      }
+      if (element.includes("BODY:")){
+
+       noBODY= element.replace('BODY:', '');
+      }
+
+
+    });
+    
+    this.iab.create('mailto:' + noMATMSG_TO.trim() + '?subject=' + noSUB.trim() + '&body=' + noBODY.trim()+'', "_system");
+
+  }
   private crear_contacto( texto:string ){
 
     let campos:any = this.parse_vcard( texto );

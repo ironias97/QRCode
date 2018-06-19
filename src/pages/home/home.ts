@@ -22,14 +22,15 @@ export class HomePage {
                private _historialService:HistorialService) {}
 
 
-  
+
   scan(){
     console.log("Realizando scan...");
 
     if( !this.platform.is('cordova')){
-    
+
      this._historialService.agregar_historial( "http://google.com");
      this._historialService.agregar_historial( "geo:9.976133040865312,-84.00677479055173" );
+     this._historialService.agregar_historial("MATMSG: TO: josue_sgg@hotmail.com; SUB:Tarea; BODY: Esta es la tarea;");
      this._historialService.agregar_historial( `BEGIN:VCARD
 VERSION:2.1
 N:Kent;Clark
@@ -39,8 +40,8 @@ TEL;HOME;VOICE:12345
 TEL;TYPE=cell:67890
 ADR;TYPE=work:;;;
 EMAIL:clark@superman.com
-END:VCARD` ); 
-       
+END:VCARD` );
+
 }
 
 this.barcodeScanner.scan().then(barcodeData => {

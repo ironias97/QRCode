@@ -7,7 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AgmCoreModule } from '@agm/core';
 
 
-import { GuardadosPage, HomePage, MapaPage, TabsPage } from "../pages/index.paginas";
+import { GuardadosPage, HomePage, MapaPage, TabsPage, } from "../pages/index.paginas";
 
 
 // servicios
@@ -27,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     GuardadosPage,
     HomePage,
     MapaPage,
-    TabsPage
+    TabsPage,
+
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -42,7 +43,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     GuardadosPage,
     HomePage,
     MapaPage,
-    TabsPage
+    TabsPage,
+
   ],
   providers: [
     StatusBar,
